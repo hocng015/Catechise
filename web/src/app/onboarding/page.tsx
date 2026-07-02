@@ -16,7 +16,7 @@ import type { AgeTier } from '@catechise/shared';
 
 const TIER_ORDER: AgeTier[] = ['child', 'youth', 'adult'];
 const PACE_ORDER: Pace[] = ['gentle', 'steady', 'eager'];
-const GOAL_ORDER: Goal[] = ['first-communion', 'confirmation', 'ocia', 'family', 'grow'];
+const GOAL_ORDER: Goal[] = ['ocia', 'returning', 'first-communion', 'confirmation', 'family', 'grow'];
 
 const TIER_BLURBS: Record<AgeTier, string> = {
   child: 'Warm, simple lessons with pictures to draw, prayers to learn, and fun quizzes.',

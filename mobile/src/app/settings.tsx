@@ -23,13 +23,23 @@ export default function SettingsScreen() {
       <Card>
         <SectionTitle>Magisterium AI</SectionTitle>
         <Text style={styles.body}>
-          Magisterium AI powers the Ask tab, lesson deep-dives, and guided Gospel
-          reflections, answering from official Church documents with citations. Create a
-          free account and API key at{' '}
+          This is optional — everything else in the app works without it. Magisterium AI
+          answers your questions on the Ask tab from the Church&apos;s own documents. To turn
+          it on:
+        </Text>
+        <Text style={styles.steps}>
+          1. Visit{' '}
           <Text style={styles.link} onPress={() => Linking.openURL('https://www.magisterium.com')}>
             magisterium.com
-          </Text>
-          , then paste the key below. It is stored securely on this device only.
+          </Text>{' '}
+          and create a free account.{'\n'}
+          2. On their site, create an &quot;API key&quot; — a long password made of letters and
+          numbers.{'\n'}
+          3. Copy it, come back here, and paste it in the box below.
+        </Text>
+        <Text style={styles.body}>
+          It is saved securely on this phone only. If this feels fiddly, ask a family member
+          to help — it takes about two minutes, once.
         </Text>
         <TextInput
           value={key}
@@ -70,7 +80,13 @@ export default function SettingsScreen() {
 
 const styles = StyleSheet.create({
   container: { padding: spacing(4), paddingBottom: spacing(10) },
-  body: { color: colors.inkSoft, fontSize: 14, lineHeight: 21 },
+  body: { color: colors.inkSoft, fontSize: 15, lineHeight: 23 },
+  steps: {
+    color: colors.ink,
+    fontSize: 15,
+    lineHeight: 26,
+    marginVertical: spacing(3),
+  },
   link: { color: colors.marian, textDecorationLine: 'underline' },
   input: {
     marginTop: spacing(3),

@@ -32,8 +32,9 @@ export default function CurriculumScreen() {
       contentContainerStyle={{ padding: spacing(4), paddingBottom: spacing(10) }}
       ListHeaderComponent={
         <Text style={styles.intro}>
-          The whole Catechism in four pillars — what we believe, how we worship, how we live,
-          and how we pray. Every lesson is keyed to the Catechism&apos;s own paragraphs (1–2865).
+          Every lesson in your journey, in order, in four parts: what we believe, how we
+          worship, how we live, and how we pray. Tap any lesson to open it — ✅ means
+          finished. Together they cover the Church&apos;s whole Catechism.
         </Text>
       }
       renderSectionHeader={({ section }) => {

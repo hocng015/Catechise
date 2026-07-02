@@ -12,13 +12,15 @@ export type Goal =
   | 'first-communion'
   | 'confirmation'
   | 'ocia'
+  | 'returning'
   | 'family'
   | 'grow';
 
 export const GOAL_LABELS: Record<Goal, string> = {
   'first-communion': 'Preparing for First Reconciliation & Communion',
   confirmation: 'Preparing for Confirmation',
-  ocia: 'Becoming Catholic (OCIA / RCIA)',
+  ocia: 'New to the Catholic faith',
+  returning: 'Returning to the Church',
   family: 'Learning together as a family',
   grow: 'Growing deeper in my faith',
 };

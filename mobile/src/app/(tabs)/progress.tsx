@@ -36,7 +36,7 @@ export default function ProgressScreen() {
     { emoji: '✍️', label: 'Ten reflections', earned: journalCount >= 10 },
     ...pillars.map((p, i) => ({
       emoji: ['⛪', '🍞', '💛', '🙏'][i],
-      label: `Pillar ${p.number} done`,
+      label: `Part ${p.number} done`,
       earned: p.units.flatMap((u) => u.lessons).every((l) => profile.completed[l.id]),
     })),
     { emoji: '👑', label: 'Whole Catechism!', earned: done === totalLessonCount },
@@ -57,8 +57,13 @@ export default function ProgressScreen() {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.headline}>{profile.name}&apos;s journey</Text>
       <Text style={styles.sub}>
-        {done} of {totalLessonCount} lessons · {progressPercent(profile)}%
-        {done < totalLessonCount ? ` · about ${weeks} week${weeks === 1 ? '' : 's'} to go` : ' · complete!'}
+        {done === 0
+          ? 'Your journey is just beginning. Everything you finish will show up here.'
+          : `You have finished ${done} of ${totalLessonCount} lessons (${progressPercent(profile)}%)${
+              done < totalLessonCount
+                ? ` — about ${weeks} week${weeks === 1 ? '' : 's'} to go at your pace.`
+                : ' — the whole journey. Deo gratias!'
+            }`}
       </Text>
 
       <Card style={{ marginTop: spacing(4) }}>
@@ -74,7 +79,7 @@ export default function ProgressScreen() {
       </Card>
 
       <Card style={{ marginTop: spacing(4) }}>
-        <SectionTitle>By pillar</SectionTitle>
+        <SectionTitle>The four parts of the journey</SectionTitle>
         <View style={{ gap: spacing(3) }}>
           {pillars.map((p) => {
             const lessons = p.units.flatMap((u) => u.lessons);
@@ -83,7 +88,7 @@ export default function ProgressScreen() {
               <View key={p.id}>
                 <View style={styles.pillarRow}>
                   <Text style={styles.pillarName}>
-                    Pillar {p.number}: {p.title}
+                    Part {p.number}: {p.title}
                   </Text>
                   <Text style={styles.pillarCount}>
                     {pillarDone}/{lessons.length}

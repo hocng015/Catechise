@@ -99,9 +99,9 @@ export default function AskScreen() {
     >
       <ScrollView ref={scrollRef} contentContainerStyle={styles.container}>
         <Text style={styles.intro}>
-          Answers come from Magisterium AI, which draws on official Church documents and shows
-          its sources. As with any tool, weigh what you read and bring big questions to your
-          priest or catechist.
+          Type any question about the Catholic faith — big or small, there are no silly
+          questions here. Answers come from the Church&apos;s own documents, with sources shown.
+          For the big things in your life, talk to a priest too — he would love to hear from you.
         </Text>
 
         {turns.length === 0 && (
