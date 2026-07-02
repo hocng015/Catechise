@@ -28,12 +28,16 @@ export default function ProgressScreen() {
   const journalCount = Object.keys(profile.journal).length;
   const weeks = estimatedWeeksRemaining(profile);
 
+  const stars = profile.stars ?? 0;
+
   const badges = [
     { emoji: '🌱', label: 'First lesson', earned: done >= 1 },
     { emoji: '🕯️', label: 'Ten lessons', earned: done >= 10 },
     { emoji: '🔥', label: '7-day streak', earned: days >= 7 },
     { emoji: '📖', label: 'First reflection', earned: journalCount >= 1 },
     { emoji: '✍️', label: 'Ten reflections', earned: journalCount >= 10 },
+    { emoji: '⭐', label: '25 stars', earned: stars >= 25 },
+    { emoji: '🌟', label: '100 stars', earned: stars >= 100 },
     ...pillars.map((p, i) => ({
       emoji: ['⛪', '🍞', '💛', '🙏'][i],
       label: `Part ${p.number} done`,
@@ -65,6 +69,11 @@ export default function ProgressScreen() {
                 : ' — the whole journey. Deo gratias!'
             }`}
       </Text>
+      {stars > 0 && (
+        <Text style={styles.starsLine}>
+          ⭐ {stars} star{stars === 1 ? '' : 's'} earned playing games
+        </Text>
+      )}
 
       <Card style={{ marginTop: spacing(4) }}>
         <SectionTitle>Badges</SectionTitle>
@@ -149,6 +158,7 @@ const styles = StyleSheet.create({
   container: { padding: spacing(4), paddingBottom: spacing(10) },
   headline: { fontSize: 26, fontWeight: '800', color: colors.marian },
   sub: { color: colors.inkSoft, marginTop: spacing(1.5), fontSize: 14 },
+  starsLine: { color: colors.ink, marginTop: spacing(2), fontSize: 14, fontWeight: '600' },
   badgeGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing(2.5) },
   badge: {
     width: 96,

@@ -24,6 +24,7 @@ export default function TabsLayout() {
     >
       <Tabs.Screen name="index" options={{ title: 'Today', tabBarIcon: emojiIcon('☀️') }} />
       <Tabs.Screen name="curriculum" options={{ title: 'Lessons', tabBarIcon: emojiIcon('📖') }} />
+      <Tabs.Screen name="play" options={{ title: 'Play', tabBarIcon: emojiIcon('🧩') }} />
       <Tabs.Screen name="gospel" options={{ title: 'Gospel', tabBarIcon: emojiIcon('✝️') }} />
       <Tabs.Screen name="ask" options={{ title: 'Ask', tabBarIcon: emojiIcon('💬') }} />
       <Tabs.Screen name="progress" options={{ title: 'My Journey', tabBarIcon: emojiIcon('🌱') }} />

@@ -12,6 +12,8 @@ interface ProfileContextValue {
   removeProfile: (id: string) => void;
   completeLesson: (lessonId: string, record?: Partial<LessonRecord>) => void;
   saveJournal: (date: string, text: string) => void;
+  /** Award stars won in a game to the active profile. */
+  addStars: (stars: number) => void;
 }
 
 const ProfileContext = createContext<ProfileContextValue | null>(null);
@@ -76,6 +78,15 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
           ...s,
           profiles: s.profiles.map((p) =>
             p.id === s.activeProfileId ? { ...p, journal: { ...p.journal, [date]: text } } : p,
+          ),
+        })),
+      addStars: (stars) =>
+        persist((s) => ({
+          ...s,
+          profiles: s.profiles.map((p) =>
+            p.id === s.activeProfileId
+              ? { ...p, stars: (p.stars ?? 0) + stars, gamesPlayed: (p.gamesPlayed ?? 0) + 1 }
+              : p,
           ),
         })),
     };

@@ -18,6 +18,9 @@ export default function RootLayout() {
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="onboarding" options={{ title: 'Welcome', headerBackVisible: false }} />
         <Stack.Screen name="lesson/[lessonId]" options={{ title: 'Lesson' }} />
+        <Stack.Screen name="play/quiz" options={{ title: 'Quick Quiz' }} />
+        <Stack.Screen name="play/match" options={{ title: 'Match Up' }} />
+        <Stack.Screen name="play/scramble" options={{ title: 'Word Builder' }} />
         <Stack.Screen name="settings" options={{ title: 'Settings', presentation: 'modal' }} />
       </Stack>
     </ProfileProvider>

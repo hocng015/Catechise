@@ -126,6 +126,23 @@ export default function TodayScreen() {
         </Pressable>
       </Link>
 
+      <Link href="/play" asChild>
+        <Pressable style={styles.gospelCard}>
+          <Text style={styles.gospelEmoji}>🧩</Text>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.gospelTitle}>
+              {profile.tier === 'adult' ? 'Play & review' : 'Time to play!'}
+            </Text>
+            <Text style={styles.gospelDetail}>
+              {profile.tier === 'adult'
+                ? 'Quick quizzes and matching games to keep what you learn fresh.'
+                : `Fun games about your faith — you have ${profile.stars ?? 0} star${(profile.stars ?? 0) === 1 ? '' : 's'} ⭐`}
+            </Text>
+          </View>
+          <Text style={styles.chevron}>›</Text>
+        </Pressable>
+      </Link>
+
       {done > 0 && (
         <View style={styles.progressCard}>
           <Text style={styles.progressLine}>

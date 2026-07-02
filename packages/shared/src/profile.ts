@@ -43,6 +43,10 @@ export interface Profile {
   completed: Record<string, LessonRecord>;
   /** Gospel journal entries keyed by ISO date. */
   journal: Record<string, string>;
+  /** Stars earned in games. Optional for profiles created before games existed. */
+  stars?: number;
+  /** Number of games played. */
+  gamesPlayed?: number;
 }
 
 export interface AppState {
