@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-parchment: #faf6ef;
+  --color-ink: #2b2320;
+  --color-ink-soft: #6b5d55;
+  --color-gold: #b8860b;
+  --color-gold-soft: #e9d9ae;
+  --color-marian: #1e3a8a;
+  --font-serif-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-parchment);
+  color: var(--color-ink);
+}
+
+.font-display {
+  font-family: var(--font-serif-display);
+}
+
+/* Child-tier reading comfort: larger, rounder text. */
+.tier-child .prose-teaching {
+  font-size: 1.2rem;
+  line-height: 1.9;
+}
