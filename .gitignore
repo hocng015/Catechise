@@ -1,7 +1,10 @@
-/node_modules
-/.next
-/out
-/build
+node_modules/
+.next/
+out/
+build/
+dist/
+.expo/
+expo-env.d.ts
 .DS_Store
 *.pem
 npm-debug.log*
@@ -10,3 +13,8 @@ npm-debug.log*
 .env*.local
 *.tsbuildinfo
 next-env.d.ts
+*.orig.*
+*.p8
+*.p12
+*.key
+*.mobileprovision
