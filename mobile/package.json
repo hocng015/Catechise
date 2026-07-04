@@ -30,5 +30,6 @@
     "web": "expo start --web",
     "typecheck": "tsc --noEmit"
   },
-  "private": true
+  "private": true,
+  "license": "PolyForm-Noncommercial-1.0.0"
 }
