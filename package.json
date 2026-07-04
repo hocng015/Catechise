@@ -10,7 +10,11 @@
   "scripts": {
     "web": "npm run dev --workspace web",
     "mobile": "npm run start --workspace mobile",
-    "build:web": "npm run build --workspace web"
+    "build:web": "npm run build --workspace web",
+    "check": "npm run typecheck --workspace web && npm run typecheck --workspace mobile"
   },
-  "license": "PolyForm-Noncommercial-1.0.0"
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "engines": {
+    "node": ">=20"
+  }
 }
