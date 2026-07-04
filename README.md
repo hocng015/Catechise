@@ -76,3 +76,11 @@ Lesson texts summarize the Catechism faithfully at three reading levels and cite
 paragraphs they cover, so learners can always go to the source. This app is a study
 companion, not a substitute for parish catechesis, the sacraments, or the Catechism
 itself.
+
+## License
+
+This project is licensed under the
+[PolyForm Noncommercial License 1.0.0](LICENSE.md). **Commercial use is not
+permitted.** You are free to use, share, and adapt it for noncommercial purposes —
+including personal study, family use, religious observance, and use by parishes,
+charities, and schools.
