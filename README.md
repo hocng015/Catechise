@@ -43,6 +43,10 @@ web/               Web companion (Next.js), including a server-side
 
 ## Running the mobile app (iOS & Android)
 
+> **New to this?** [SETUP.md](SETUP.md) walks through everything from scratch —
+> installing the tools, getting the app on your phone, and troubleshooting —
+> with no experience assumed.
+
 ```bash
 npm install
 cd mobile
